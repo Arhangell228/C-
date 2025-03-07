@@ -1,0 +1,45 @@
+using System;
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
+
+        Console.Write("Введіть номер дня тижня (1-7): ");
+        int dayNumber = int.Parse(Console.ReadLine());
+
+        string dayName;
+        switch (dayNumber)
+        {
+            case 1:
+                dayName = "Понеділок";
+                break;
+            case 2:
+                dayName = "Вівторок";
+                break;
+            case 3:
+                dayName = "Середа";
+                break;
+            case 4:
+                dayName = "Четвер";
+                break;
+            case 5:
+                dayName = "П'ятниця";
+                break;
+            case 6:
+                dayName = "Субота";
+                break;
+            case 7:
+                dayName = "Неділя";
+                break;
+            default:
+                dayName = "Невірний номер дня";
+                break;
+        }
+
+        Console.WriteLine($"День тижня: {dayName}");
+    }
+}
