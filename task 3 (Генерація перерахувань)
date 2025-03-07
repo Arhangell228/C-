@@ -1,0 +1,48 @@
+using System;
+using System.Text;
+
+class Program
+{
+    // Перерахування для пір року
+    enum Season
+    {
+        Winter,
+        Spring,
+        Summer,
+        Autumn
+    }
+
+    static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
+
+        Console.Write("Введіть номер місяця (1-12): ");
+        int monthNumber = int.Parse(Console.ReadLine());
+
+        Season season;
+        if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2) // Додано || між умовами
+        {
+            season = Season.Winter;
+        }
+        else if (monthNumber >= 3 && monthNumber <= 5)
+        {
+            season = Season.Spring;
+        }
+        else if (monthNumber >= 6 && monthNumber <= 8)
+        {
+            season = Season.Summer;
+        }
+        else if (monthNumber >= 9 && monthNumber <= 11)
+        {
+            season = Season.Autumn;
+        }
+        else
+        {
+            Console.WriteLine("Невірний номер місяця.");
+            return;
+        }
+
+        Console.WriteLine($"Пора року: {season}");
+    }
+}
